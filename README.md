@@ -48,23 +48,6 @@ http://localhost:8069
 
 ---
 
-📁 **Project Structure**
-
-```
-odoo-courses-system/
-|
-├── odoo/                  # Odoo core source
-├── odoo-custom-addons/    # Your custom modules (courses_module is here)
-├── odoo-venv/             # Python virtual environment (not used with Docker)
-├── odoo.conf              # Odoo configuration file
-├── Dockerfile             # Build Odoo inside Docker
-├── docker-compose.yml     # Services definition
-├── .gitignore             # Git ignore rules
-└── .dockerignore          # Docker ignore rules
-```
-
----
-
 👤 **Author**
 
 **Mostafa Bahaa**
