@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=odoo18
+      - POSTGRES_PASSWORD=odoo
+    volumes:
+      - odoo18-db-data:/var/lib/postgresql/data
+
+  web:
+    image: odoo:18.0
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    volumes:
+      - ./odoo:/opt/odoo18/odoo/odoo
+      - ./odoo-custom-addons:/opt/odoo18/odoo-custom-addons
+      - ./odoo.conf:/etc/odoo/odoo.conf
+    environment:
+      - HOST=db
+      - USER=odoo18
+      - PASSWORD=odoo
+
+volumes:
+  odoo18-db-data:
+
